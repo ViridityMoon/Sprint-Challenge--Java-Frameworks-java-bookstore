@@ -124,6 +124,7 @@ public class SeedData
                                    "barnbarn@email.local"));
         userService.save(u3);
 
+        // user
         User u4 = new User("puttat",
                            "password",
                            "puttat@school.lambda");
@@ -131,6 +132,7 @@ public class SeedData
                 .add(new UserRoles(u4, r2));
         userService.save(u4);
 
+        // user
         User u5 = new User("misskitty",
                            "password",
                            "misskitty@school.lambda");

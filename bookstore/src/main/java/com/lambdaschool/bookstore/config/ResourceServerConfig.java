@@ -52,13 +52,30 @@ public class ResourceServerConfig
                              "/webjars/**",
                              "/createnewuser")
                 .permitAll()
+
+
                 .antMatchers("/users/**",
                              "/useremails/**",
                              "/oauth/revoke-token",
                              "/logout")
                 .authenticated()
+
+
                 .antMatchers("/roles/**")
                 .hasAnyRole("ADMIN", "DATA")
+
+
+                .antMatchers("/books/book",
+                                        "/books/book**",
+                                        "/books/book/**")
+                .hasAnyRole("ADMIN")
+
+
+                .antMatchers("/books/books",
+                                        "/books/book/**")
+                .hasAnyRole("DATA")
+
+
                 .and()
                 .exceptionHandling()
                 .accessDeniedHandler(new OAuth2AccessDeniedHandler());
